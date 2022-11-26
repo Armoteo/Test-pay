@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders homepage unchanged 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <main
+      className="main"
+    >
+      <div
+        className="page"
+      >
+        <h1
+          className="title"
+        >
+          welcomeMessage
+           
+          <a
+            href="https://nextjs.org"
+          >
+            nextJs
+            !
+          </a>
+        </h1>
+        <p
+          className="description"
+        >
+          getStarted
+           
+          <code
+            className="code"
+          >
+            pages/index.js
+          </code>
+        </p>
+        <div
+          className="grid"
+        >
+          <a
+            className="card"
+            href="https://nextjs.org/docs"
+          >
+            <h3>
+              documentation
+               →
+            </h3>
+            <p>
+              findInformation
+            </p>
+          </a>
+          <a
+            className="card"
+            href="https://nextjs.org/learn"
+          >
+            <h3>
+              learn
+               →
+            </h3>
+            <p>
+              learnAbout
+            </p>
+          </a>
+          <a
+            className="card"
+            href="https://github.com/vercel/next.js/tree/master/examples"
+          >
+            <h3>
+              examples
+               →
+            </h3>
+            <p>
+              discoverAndDeploy
+            </p>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer
+      className="footer"
+    >
+      <a
+        href="https://onix-systems.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        poweredBy
+         
+        onix
+      </a>
+    </footer>
+  </div>
+</div>
+`;
