@@ -17,6 +17,7 @@ const getStripe = () => {
 const About = () => {
   const { t } = useTranslation();
 
+  // eslint-disable-next-line no-unused-vars
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [list, setList] = useState([]);
@@ -50,17 +51,13 @@ const About = () => {
     };
 
     setLoading(true);
-    console.log('redirectToCheckout');
 
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
-    console.log('Stripe checkout error', error);
 
     if (error) setStripeError(error.message);
     setLoading(false);
   };
-
-  if (stripeError) alert(stripeError);
   
   return (
     <AboutView
