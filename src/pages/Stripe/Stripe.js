@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { loadStripe } from '@stripe/stripe-js';
 import Stripe from 'stripe';
-import AboutView from './AboutView';
+import StripeView from './StripeView';
 
 let stripePromise;
 
@@ -14,7 +14,7 @@ const getStripe = () => {
   return stripePromise;
 };
 
-const About = () => {
+const StripePage = () => {
   const { t } = useTranslation();
 
   // eslint-disable-next-line no-unused-vars
@@ -60,7 +60,7 @@ const About = () => {
   };
   
   return (
-    <AboutView
+    <StripeView
       title={t('aboutPage')}
       isLoading={isLoading}
       list={list}
@@ -69,4 +69,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default StripePage;

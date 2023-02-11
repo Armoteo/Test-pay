@@ -1,19 +1,19 @@
 import i18next from 'i18next';
 import { render } from '../../settings/test-utils';
-import AboutView from '../../../src/pages/About/AboutView';
+import StripeView from '../../../src/pages/Stripe/StripeView';
 
-describe('<AboutView />', () => {
+describe('<StripeView />', () => {
   let wrapper;
   beforeEach(() => {
-    wrapper = render(<AboutView title={i18next.t('aboutPage')} />);
+    wrapper = render(<StripeView title={i18next.t('aboutPage')} />);
   });
 
-  test('should render AboutView component', () => {
+  test('should render StripeView component', () => {
     const { asFragment } = wrapper;
     expect(asFragment(wrapper)).toMatchSnapshot();
   });
 
-  test('AboutView component should have passed title', () => {
+  test('StripeView component should have passed title', () => {
     const { getByText } = wrapper;
     expect(getByText(i18next.t('aboutPage'))).toBeInTheDocument();
   });

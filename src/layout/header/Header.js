@@ -15,8 +15,11 @@ const Header = () => {
       <Link to="/" className={styles.headerLink}>
         {t('home')}
       </Link>
-      <Link to="/about" className={styles.headerLink}>
-        {t('about')}
+      <Link to="/stripe" className={styles.headerLink}>
+        {t('stripe')}
+      </Link>
+      <Link to="/paypal" className={styles.headerLink}>
+        {t('paypal')}
       </Link>
       <button
         className={styles.toggleLanguage}

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './sass/About.module.scss';
+import styles from './sass/Stripe.module.scss';
 import Card from '../../components/Card/Card';
 
-const AboutView = ({ redirectToCheckout, list }) => {
+const StripeView = ({ redirectToCheckout, list }) => {
   return (
     <div className={styles.checkout}>
       {list?.length > 0 && list?.map((item, index) => (
@@ -20,14 +20,14 @@ const AboutView = ({ redirectToCheckout, list }) => {
   );
 };
 
-AboutView.propTypes = {
+StripeView.propTypes = {
   list: PropTypes.arrayOf(PropTypes.shape({})),
   redirectToCheckout: PropTypes.func.isRequired,
 };
 
-AboutView.defaultProps = {
+StripeView.defaultProps = {
   list: [],
 
 };
 
-export default AboutView;
+export default StripeView;

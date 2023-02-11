@@ -5,4 +5,6 @@ export default {
   aboutPage: 'About page',
   homePage: 'Home page',
   newJoke: 'New joke',
+  stripe: 'Stripe',
+  paypal: 'Paypal'
 };
