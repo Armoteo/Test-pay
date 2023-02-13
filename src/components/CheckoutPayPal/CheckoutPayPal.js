@@ -33,7 +33,10 @@ const CheckoutPayPal = () => {
   };
 
   const onApproveOrder = (data, actions) => {
-    return actions.order.capture().then(() => {
+    return actions.order.capture().then((details) => {
+      const name = details.payer.name.given_name;
+      // eslint-disable-next-line no-console
+      console.log(`Transaction completed by ${name}`);
       navigate('/success');
     });
   };
