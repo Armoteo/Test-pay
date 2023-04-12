@@ -1,0 +1,40 @@
+$screen-min: 320px;
+$screen-min-s: 374px;
+$screen-xxs: 576px;
+$screen-xs: 768px;
+$screen-sm: 1024px;
+$screen-md: 1274px;
+$screen-lg: 1439px;
+$screen-max: 1920px;
+
+$retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
+$phones-xs:'only screen and (max-width: #{$screen-min-s})';
+$phones: 'only screen and (max-width: #{$screen-xxs})';
+$tablets: 'only screen and (max-width: #{$screen-xs})';
+$tablets-big: 'only screen and (max-width: #{$screen-sm})';
+$desktop: 'only screen and (max-width: #{$screen-md})';
+$full-hd: 'only screen and (max-width: #{$screen-lg})';
+
+// Colors
+$defaultWhite: #FFFFFF;
+$backgroundColor: #0D0C16;
+$borderColor: #5B5D6B;
+$backgroundInput: rgba(255, 255, 255, 0.1);
+$defaultButton: linear-gradient(90deg, #E22028 0%, #A1287D 100.02%);
+$defaultRed: #BE1235;
+$defaultGreen: #5ABA1C;
+$whiteGrey: #D2D4DA;
+$labelColor: #9496A1;
+$disabledText: #667080;
+$darkGrey: #777986;
+$defaultGrey: #B3B5BD;
+
+$defaultText: #1D1D1D;
+$greyText: #DADADA;
+
+
+$shadowBlock: 0px 11px 22px rgba(0, 0, 0, 0.1);
+
+
+//fonts
+$main-font-family: 'Inter', sans-serif;

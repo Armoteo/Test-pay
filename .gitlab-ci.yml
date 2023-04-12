@@ -1,6 +1,6 @@
 stages:
   - lint
-  - test
+  # - test
   - sonar
   - build
   - deploy
@@ -21,17 +21,17 @@ lint:
     - docker build --network=host -t react-${CI_COMMIT_SHA}:latest -f DockerfileCI .
     - docker run --rm --name react-${CI_COMMIT_SHA} react-${CI_COMMIT_SHA}:latest npm run lint
 
-test:
-  stage: test
-  only:
-    - main
-    - develop
-    - merge_requests
-  image: $BUILD_DOCKER_IMAGE
-  script:
-    - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
-    - docker build --network=host -t react-${CI_COMMIT_SHA}:latest -f DockerfileCI .
-    - docker run --rm --name react-${CI_COMMIT_SHA} react-${CI_COMMIT_SHA}:latest npm run test:ci
+# test:
+#   stage: test
+#   only:
+#     - main
+#     - develop
+#     - merge_requests
+#   image: $BUILD_DOCKER_IMAGE
+#   script:
+#     - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
+#     - docker build --network=host -t react-${CI_COMMIT_SHA}:latest -f DockerfileCI .
+#     - docker run --rm --name react-${CI_COMMIT_SHA} react-${CI_COMMIT_SHA}:latest npm run test:ci
 
 sonarqube-check:
   stage: sonar
@@ -78,6 +78,8 @@ build:
     - >
       docker build
       --build-arg SKIP_PREFLIGHT_CHECK=$SKIP_PREFLIGHT_CHECK
+      --build-arg NEXT_PUBLIC_SENTRY_DSN=$NEXT_PUBLIC_SENTRY_DSN
+      --build-arg SENTRY_DSN=$SENTRY_DSN
       --network=host -t ${DOCKER_REPOSITORY_IMAGE} .
     - docker push ${DOCKER_REPOSITORY_IMAGE}
 

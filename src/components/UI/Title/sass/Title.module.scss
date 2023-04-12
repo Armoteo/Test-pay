@@ -1,0 +1,20 @@
+@import "../../../../pages/App/sass/variables";
+
+.title {
+  margin: 0;
+  line-height: 57px;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  color: $defaultWhite;
+
+  @media #{$phones} {
+    font-size: 36px;
+    line-height: 40px;
+    white-space: nowrap;
+  }
+
+  @media #{$phones-xs} {
+    white-space: normal;
+  }
+}

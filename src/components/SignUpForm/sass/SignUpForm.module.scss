@@ -1,0 +1,78 @@
+@import "src/pages/App/sass/variables";
+
+.container {
+  position: relative;
+  max-width: 839px;
+  height: 100%;
+  margin-right: auto;
+  padding: 100px 179px;
+  min-height: 100vh;
+  background-color: $backgroundColor;
+
+  >div:last-child {
+    margin-top: 32px;
+  }
+
+  h1 {
+    margin-bottom: 48px;
+
+    @media #{$phones} {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media #{$tablets-big} {
+    max-width: 100%;
+  }
+
+  @media #{$tablets} {
+    padding: 50px 100px;
+  }
+
+  @media #{$phones} {
+    padding: 56px 16px 48px 16px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    &:first-child {
+      margin-right: 17px;
+
+      @media #{$phones} {
+       margin-right: 0;
+      }
+    }
+    width: 50%;
+
+    @media #{$phones} {
+      width: 100%;
+    }
+  }
+
+  @media #{$phones} {
+    flex-direction: column;
+  }
+}
+
+.error,
+.password {
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: 19px;
+    top: 50%;
+    cursor: pointer;
+  }
+}
+
+.error {
+  svg {
+    top: 40%;
+  }
+}

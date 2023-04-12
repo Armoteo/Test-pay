@@ -11,14 +11,19 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package*.json /usr/src/app/
 RUN npm install
-RUN npm install -g serve
 
 # add app
 COPY . /usr/src/app
+
+# Env variables
+ARG NEXT_PUBLIC_SENTRY_DSN
+ENV NEXT_PUBLIC_SENTRY_DSN=$NEXT_PUBLIC_SENTRY_DSN
+ARG SENTRY_DSN
+ENV SENTRY_DSN=$SENTRY_DSN
 
 RUN npm run build
 
 EXPOSE 3000
 
 # start app
-CMD ["serve", "-s", "build"]
+CMD ["npm", "start"]

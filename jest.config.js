@@ -1,18 +1,40 @@
 module.exports = {
   collectCoverageFrom: [
-    '**/src/**/*.{js,jsx,ts,tsx}',
-    '!**/src/**/*.d.ts',
-    '!**/App.js',
-    '!**/reducers.js',
-    '!**/src/components/reducers/**',
-    '!**/src/components/store/store.js',
-    '!**/src/registerServiceWorker.js',
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
   ],
-  setupFilesAfterEnv: ['<rootDir>/__tests__/settings/setupTests.js'],
   moduleNameMapper: {
-    '\\.svg$': '<rootDir>/__tests__/__mocks__/svgMock.js',
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
+    // Handle CSS imports (with CSS modules)
+    // https://jestjs.io/docs/webpack#mocking-css-modules
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+
+    // Handle CSS imports (without CSS modules)
+    '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
+
+    // Handle image imports
+    // https://jestjs.io/docs/webpack#handling-static-assets
+    '^.+\\.(jpg|jpeg|png|gif|webp|avif|svg)$': '<rootDir>/__mocks__/fileMock.js',
+
+    // Handle module aliases
+    '^@/components/(.*)$': '<rootDir>/components/$1',
   },
-  testMatch: ['**/?(*.)+(spec|test).js'],
-  testEnvironment: 'jsdom'
+  setupFilesAfterEnv: ['<rootDir>/__tests__/settings/jest.setup.ts'],
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/.next/',
+    '<rootDir>/.next/',
+    '<rootDir>/__tests__/settings/',
+    '<rootDir>/.*__mocks__.*/',
+  ],
+  transform: {
+    // Use babel-jest to transpile tests with the next/babel preset
+    // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+  },
+  transformIgnorePatterns: [
+    '/node_modules/',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+  testEnvironment: 'jsdom',
 };

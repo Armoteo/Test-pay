@@ -1,0 +1,101 @@
+@import '../../../../pages/App/sass/variables';
+
+.textField {
+  color: $defaultWhite;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: $main-font-family;
+  white-space: nowrap;
+
+  @media only screen and (max-width: $screen-xxs) {
+    font-size: 14px;
+  }
+}
+
+.textInfo {
+  color: $whiteGrey;
+}
+
+.textConfirm {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  color: $labelColor;
+  white-space: pre;
+  margin-bottom: 32px;
+  margin-top: 32px;
+
+  @media #{$phones} {
+    white-space: normal;
+  }
+}
+
+.error {
+  color: $defaultRed;
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+.textLabel {
+  color: $labelColor;
+  line-height: 20px;
+  margin-bottom: 4px;
+}
+
+.textLabelError {
+  color: $defaultRed;
+  font-size: 14px;
+}
+
+
+.textValidationSuccess,
+.textValidationError,
+.textValidation {
+  flex: 50%;
+  margin-bottom: 10px;
+  color: $darkGrey;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: $darkGrey;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-bottom: 2px;
+  }
+}
+
+.textValidationError {
+  color: $defaultWhite;
+  &:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: $defaultRed;
+  }
+}
+
+.textValidationSuccess {
+  color: $defaultWhite;
+  &:before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: $defaultGreen;
+  }
+}
+
+.textReset {
+  font-size: 16px;
+  color: $defaultGrey;
+  display: block;
+  margin-bottom: 32px;
+  text-align: center;
+
+  @media #{$tablets} {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "internalServerError ": "Internal Server Error",
+  "pageNotFound": "Page not found",
+  "incorrectFormat": "Incorrect format",
+  "isFirstNameRequired": "First name field is required",
+  "isLastNameRequired": "Last name field is required",
+  "isPasswordRequired": "Password is required",
+  "isEmailRequired": "Email is required",
+  "passwordIsNotValid": "Password is not valid",
+  "minLength": "Password length less then 8 characters",
+  "dontMatch": "Passwords don't match",
+  "isNewPasswordRequired": "New password field is required",
+  "isConfirmPasswordRequired": "Confirm new password field is required"
+}

@@ -1,0 +1,30 @@
+@import "src/pages/App/sass/variables";
+
+.container {
+  max-width: 839px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  min-height: 100vh;
+  background-color: $backgroundColor;
+
+  @media #{$tablets-big} {
+    max-width: 100%;
+  }
+
+  @media #{$phones} {
+    padding: 16px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 481px;
+  min-height: 217px;
+
+  div:first-child {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,34 @@
+@import '../../../../pages/App/sass/variables';
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  border: 1px solid $borderColor;
+  background-color: $backgroundInput;
+  outline: none;
+  border-radius: 12px;
+  color: $defaultWhite;
+
+  &:focus {
+    border: 1px solid $defaultWhite;
+    }
+
+  &:hover {
+    outline: none;
+  }
+
+  &:disabled {
+    background: $borderColor;
+    border: none;
+    color: $disabledText;
+  }
+}
+
+.error {
+  border: 1px solid $defaultRed;
+
+  &:focus {
+    border: 1px solid $defaultRed;
+  }
+}

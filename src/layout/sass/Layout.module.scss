@@ -1,0 +1,31 @@
+@import '../../pages/App/sass/variables.scss';
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  // padding: 24px;
+
+  @media #{$phones} {
+    padding: 0;
+  }
+
+  @media #{$tablets-big} {
+    padding: 0;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  @media #{$tablets} {
+    width: 100%;
+  }
+}

@@ -1,0 +1,50 @@
+@import "src/pages/App/sass/variables";
+
+.container {
+  width: fit-content;
+  height: fit-content;
+  a {
+    color: $defaultWhite;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.redLink {
+  a {
+    color: $defaultRed;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.forgotPassLink {
+  margin-left: auto;
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.resetLink {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $darkGrey;
+  }
+}
